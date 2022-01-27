@@ -14,24 +14,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("👍🏻 The viewDidLoad has run!")
-        messageLabel.text = "Fabulous? That's you!"
-    }
-
-    @IBAction func messageButtonPressed(_ sender: UIButton) {
-        print("😎 The message button was pressed!")
-        messageLabel.text = "You Are Awesome!"
-        messageLabel.textColor = UIColor.red
-        messageLabel.textAlignment = .left
-        displayImage.image = UIImage(named: "image0")
+        
     }
     
-    @IBAction func secondMessageButtonPressed(_ sender: UIButton) {
-        messageLabel.text = "You're Great!"
-        messageLabel.textColor = UIColor.blue
-        messageLabel.textAlignment = .right
-        displayImage.image = UIImage(named: "image1")
-
+    @IBAction func messageButtonPressed(_ sender: UIButton) {
+        let awesomeMessage = "You Are Awesome!"
+        let greatMessage = "You Are Great!"
+        let bombMessage = "You Are Da Bomb!"
+        
+        
+        if messageLabel.text == awesomeMessage {
+            messageLabel.text = greatMessage
+            messageLabel.textColor = UIColor.blue
+            displayImage.image = UIImage(named: "image1")
+        } else if messageLabel.text == greatMessage{
+            messageLabel.text = bombMessage
+            messageLabel.textColor = UIColor.magenta
+            displayImage.image = UIImage(named: "image2")
+        } else {
+            messageLabel.text = awesomeMessage
+            messageLabel.textColor = UIColor.red
+            displayImage.image = UIImage(named: "image0")
+        }
+        
     }
 }
 
